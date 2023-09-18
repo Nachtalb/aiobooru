@@ -21,9 +21,9 @@ class DanbooruMediaAsset(BaseModel):
     md5: str
     file_ext: str
     file_size: int
-    image_width: int = Field(..., alias="width")
-    image_height: int = Field(..., alias="height")
-    duration: int | None = None
+    width: int = Field(..., alias="image_width")
+    height: int = Field(..., alias="image_height")
+    duration: float | None = None
     status: str
     file_key: str
     is_public: bool
@@ -50,8 +50,8 @@ class DanbooruPost(BooruPost):
 
     tag_string: str
 
-    image_width: int = Field(..., alias="width")
-    image_height: int = Field(..., alias="height")
+    width: int = Field(..., alias="image_width")
+    height: int = Field(..., alias="image_height")
 
     file_size: int
     file_url: str | None = None
